@@ -5,8 +5,8 @@ bal_fspsx = 70000
 bal_fbtix = 9080
 
 portfolio = [
-    {'symbol': 'VINIX', 'value': bal_vinix, 'type': 'domestic stock'},
-    {'value': bal_fzrox, 'symbol': 'FZROX', 'type': 'domestic stock'},
+    {'symbol': 'VINIX', 'type': 'domestic stock', 'value': bal_vinix},
+    {'symbol': 'FZROX', 'type': 'domestic stock', 'value': bal_fzrox},
     {'symbol': 'FSPSX', 'type': 'international_stock', 'value': bal_fspsx},
     {'symbol': 'FBTIX', 'type': 'bond', 'value': bal_fbtix}
     ]
@@ -19,9 +19,12 @@ def sum_portfolio():
 
 
 def fund_weights(portfolio_total):
+    total_weight = 0
     for fund in portfolio:
-        fund_weight = int(fund['value']/total_value * 100)
-        print(fund['symbol'], '->', fund_weight)
+        fund_weight = fund['value']/total_value * 100
+        print(fund['symbol'], '->', fund_weight, "%")
+        total_weight += fund_weight
+    print("Total Weight ->", total_weight)
     return
 
 
