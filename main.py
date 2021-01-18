@@ -22,8 +22,9 @@ def fund_weights(portfolio_total):
     total_weight = 0
     for fund in portfolio:
         fund_weight = fund['value']/total_value * 100
-        print(fund['symbol'], '->', fund_weight, "%")
+        print(fund['symbol'], '->', "{:.2f}".format(fund_weight), "%")
         total_weight += fund_weight
+
     print("Total Weight ->", total_weight)
     return
 
