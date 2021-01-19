@@ -3,7 +3,7 @@ import pandas as pd
 bal_vinix = 200000
 bal_fzrox = 40000
 bal_fspsx = 70000
-bal_fbtix = 9080
+bal_fbtix = 10000
 
 portfolio = [
     {'symbol': 'VINIX', 'asset class': 'domestic stock', 'value': bal_vinix},
@@ -17,9 +17,6 @@ df_portfolio['weighting'] = (df_portfolio['value']/sum(fund['value'] for fund in
 df_portfolio.loc["Total"] = df_portfolio.sum(numeric_only=True)
 
 print(df_portfolio)
-
-
-
 
 
 
