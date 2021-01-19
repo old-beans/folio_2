@@ -14,9 +14,6 @@ portfolio = [
 
 df_portfolio = pd.DataFrame(portfolio)
 df_portfolio['weighting'] = (df_portfolio['value']/sum(fund['value'] for fund in portfolio)*100)
-
-# print(df_portfolio.sum(axis=0, level='asset class'))
-
 df_portfolio.loc["Total"] = df_portfolio.sum(numeric_only=True)
 
 print(df_portfolio)
