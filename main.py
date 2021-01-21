@@ -11,12 +11,14 @@ portfolio = [
     {'symbol': 'FSPSX', 'asset class': 'international stock', 'value': bal_fspsx},
     {'symbol': 'FBTIX', 'asset class': 'bond', 'value': bal_fbtix}]
 
-
 df_portfolio = pd.DataFrame(portfolio)
 df_portfolio['weighting'] = (df_portfolio['value']/sum(fund['value'] for fund in portfolio)*100)
 df_portfolio.loc["Total"] = df_portfolio.sum(numeric_only=True)
+asset_class_sum = df_portfolio.groupby(['asset class']).sum()
 
 print(df_portfolio)
+print(asset_class_sum)
+
 
 
 
