@@ -12,8 +12,9 @@ portfolio = {'VINIX': {'asset class': 'domestic stock', 'value': bal_vinix},
 
 df_portfolio = pd.DataFrame(portfolio).swapaxes(0, 1)
 df_portfolio.loc["Total"] = df_portfolio.sum(numeric_only=True)
-# asset_class_sum = df_portfolio.groupby(['asset class']).sum()
-
 
 print(df_portfolio)
+
+
+# asset_class_sum = df_portfolio.groupby(['asset class']).sum()
 # print(asset_class_sum)
