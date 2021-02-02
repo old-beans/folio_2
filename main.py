@@ -10,23 +10,13 @@ portfolio = {'VINIX': {'asset class': 'domestic stock', 'value': bal_vinix},
              'FSPSX': {'asset class': 'international stock', 'value': bal_fspsx},
              'FBTIX': {'asset class': 'bond', 'value': bal_fbtix}}
 
-<<<<<<< HEAD
-df_portfolio = pd.DataFrame(portfolio)
-df_portfolio.loc["Total"] = df_portfolio.sum(numeric_only=True)
-
-print(df_portfolio)
-
-
-
-
-=======
 df_portfolio = pd.DataFrame.from_dict(portfolio, orient='index')
 df_portfolio.loc["total"] = df_portfolio.sum(numeric_only=True)
 total_value = df_portfolio.loc['total', 'value']
 df_portfolio['weight %'] = df_portfolio['value'] / total_value * 100
 
 print(df_portfolio)
->>>>>>> dev
 
 asset_class_sum = df_portfolio.groupby(['asset class']).sum()
 print(asset_class_sum)
+
